@@ -22,4 +22,4 @@ function restaurant() {
 return finalRestaurant;
 }
 
-console.log (restaurant);
+console.log (restaurant); //this errored out start debug at first function
