@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My Day Trip Generator</title>
+    <script  type="text/javascript" src="destinationsSelector.js"></script>
+    <title>My Day Trip Generator</title>
+    <style>#mytrip {
+        background-color: lightblue;
+        color: black;
+        padding: 40px;
+        text-align: center;
+      } </style>
 </head>
 <body>
-    <h1>Please Click to choose your first desitnation!</h1>
-    <p><button type="button" onclick="alert('Please stand by!')">Click Me!</button></p>
     
-<script src="destinationsSelector.js" type="text/javascript"></script>
+    <h2 id="mytrip"> Please Click to choose your first desitnation!</h2>
+    
+    <input type="button" onclick="destination()" value="Click Me!">
+   
+
 </body>
 </html>
