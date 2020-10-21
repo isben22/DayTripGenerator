@@ -37,6 +37,7 @@
     // approach: 1. offer input for user to run selection. 2. have user select which portion they want to run (or all), 3. push selection/s into string
     //without pushing this to the web page (yet) after string is pushed to console; ask user in a prompt if they are satisfied with selection. 
     //fun if/ statement that if !=true, then offere reselection function; else end. 
+
    function dayTrip(){ 
         let finalDestination = destination();
         let finalRestaurant = restaurant();
@@ -45,44 +46,52 @@
         let dayTrip = ("You will take a " + finalTransportation + " to visit " + finalRestaurant + " in the city of " + finalDestination + " and enjoy the show " + finalEntertainment +"!" );//concantonates into a human readable sentenace
     return dayTrip; 
    }
-   let triplog = dayTrip();
-   console.log(triplog);
-   let validation = satisfaction();
+   let firstTrip = dayTrip();
+   console.log(firstTrip);
+
+   let choice = prompt("Are you happy with your choices?");  //take it from here
+   while (choice = 'no'){
+   dayTrip();
+   console.log(firstTrip);
+   choice
+   }
+
+//    let triplog = dayTrip();
+//    console.log(triplog);
+
+
+// below- I was attempting to present the user the option of randomly selecting one aspect of the trip. Discussed with **David L. **and he said for the scope of the problem, 
+// I could feed the user a while loop and a randomly generated string until the condition was true. 
+
+//    let validation = satisfaction();
+//     function satisfaction(){
+//         let satisfaction =prompt("Are you happy with the selection?");    
+//     if (satisfaction = "No"); 
+//         let reselect = prompt("Which element would you like assistance with?");
     
-    function satisfaction(){
-        let satisfaction =prompt("Are you happy with the selection?");    
-        if (satisfaction = "No"); 
-        let reselect = prompt("Which element would you like assistance with?");
-    
-        return reselect;
-    }
-        
-    
-        switch (reselect) {
-            
-            case "destination":
-              reselect2 = destination(); 
-              let dayTrip2 = dayTrip.replace(theSpot,reselect); //change dayTrip2 to change1 
-              console.log(dayTrip2);
-              satisfaction();
-              break;
-            case "restaurant":
-                reselect = restaurant();
-                dayTrip.splice(0,1,reselect);
-                break;
-            case "transportation":
-                reselect = transportation();
-                dayTrip.splice(0,1,reselect);
-                break;
-            case "entertainment":
-                reselect = entertainment(); 
-                dayTrip.splice(0,1,reselect);
-                break;
-    
-           default:
-               break; //default reruns the selection
+//         while (satisfaction = "no"){
+//             switch (reselect) {
+//                 case "destination":
+//                     finalDestination = destination();
+//                 break;
+//                 case "restaurant":
+//                     reselect = restaurant();
+//                     dayTrip.splice(0,1,reselect);
+//                     break;
+//                 case "transportation":
+//                     reselect = transportation();
+//                     dayTrip.splice(0,1,reselect);
+//                     break;
+//                 case "entertainment":
+//                     reselect = entertainment(); 
+//                     dayTrip.splice(0,1,reselect);
+//                     break;
+//             default:
+//                 break; //default reruns the selection
      
-        }
-     
-    console.log(dayTrip2);
-    alert("Thank you! Your selection has been CONFIRMED. Enjoy!");
+//         }
+    
+//     console.log(triplog);
+//     alert("Thank you! Your selection has been CONFIRMED. Enjoy!");
+//    }
+// }
